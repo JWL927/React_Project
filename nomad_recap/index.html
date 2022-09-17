@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomad_Recap</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    const MinuteToHour = () => {
+        const [amount, setAmount] = React.useState();
+        const [flip, setFlip] = React.useState(false);
+        const onChange = () => {
+            setAmount(event.target.value);
+        };
+        const reset = () => setAmount(0);
+        const onFlip = () => {
+            reset();
+            setFlip((current) => !current);
+        }
+        return (
+            <div>
+                <h1>Minute To Hour</h1>
+                <input 
+                    value={flip ? amount * 60 : amount} 
+                    placeholder="Minutes" 
+                    type="number" 
+                    onChange={onChange}
+                    disabled={flip}
+                />
+                <input 
+                    placeholder="Hours" 
+                    type="number"
+                    onChange={onChange}
+                    value={flip ? amount : amount / 60}
+                    disabled={!flip}
+                />
+                <button onClick={reset}>Reset</button>
+                <button onClick={onFlip}>{flip ? "Hour" : "Minute"}</button>
+            </div>
+        );
+    };
+    const KilometerToMile = () => {
+        return (
+            <div>
+            </div>
+        );
+    };
+    const App = () => {
+        const [index, setIndex] = React.useState("xx");
+        const onSelect = (event) => {
+            setIndex(event.target.value);
+        };
+        return (
+            <div>
+                <h1>Super Converter</h1>
+                <select value={index} onChange={onSelect}>
+                    <option value="xx">Select your unit</option>
+                    <option value="0">Minute To Hour</option>
+                    <option value="1">Kilometer To Mile</option>    
+                </select>
+                <hr/>
+                {index === "xx" ? "Please select yout unit" : null}
+                {index === "0" ? <MinuteToHour /> : null}
+                {index === "1" ? <KilometerToMile /> : null}
+            </div>
+        );
+    };
+    ReactDOM.render(<App />, root);
+</script>
+</html>

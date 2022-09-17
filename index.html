@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const App = () => {
+        const [loading, setLoading] = React.useState(true);
+        const [movies, setMovies] = React.useState([]);
+        const getMovies = async () => {
+            const json = await (await fetch(
+                `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year`
+            )).json();
+            setMovies(json.data.movies);
+            setLoading(false);
+        };
+        React.useEffect(() => {
+            getMovies();
+        }, []);
+        return (
+            <div>{loading ? (
+                <h1>Loading...</h1>
+                ) : (
+                    <div>
+                        {movies.map((movie) => (
+                            <div key={movie.id}>
+                                <img src={movie.medium_cover_image} alt=""/>
+                                <h2>{movie.title}</h2>
+                                <ul>
+                                    {movie.genres.map((g) => (
+                                        <li key={g}>{g}</li>  
+                                    ))}
+                                </ul>
+                                <p>{movie.summary}</p>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        )
+    };
+    const root = document.getElementById("root");
+    ReactDOM.render(<App />, root);
+</script>
+
+</html>
