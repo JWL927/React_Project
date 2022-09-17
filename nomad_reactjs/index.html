@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    const Title = () => {return (<h3 id="title" onMouseEnter={() => console.log("mouse enter")}>Hello</h3>)};
+    const Button = () => {return (<button onClick={() => console.log("clicked")}>Click me</button>)};
+    // const h3 = React.createElement("h3", {
+    //     onMouseEnter: () => console.log("mouse enter"),
+    // }, "Hello");
+    // const btn = React.createElement("button", {
+    //     onClick: () => console.log("clicked"),
+    // }, "Click me");
+    const Container = (
+        <div>
+            <Title />
+            <Button />
+        </div>
+    );
+    ReactDOM.render(Container, root);
+</script>
+</html>
