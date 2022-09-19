@@ -15,16 +15,33 @@
 <script type="text/babel">
     const root = document.getElementById("root");
     const App = () => {
-        const [minutes, setMinutes] = React.useState();
-        const [hours, setHours] = React.useState();
+        const [amount, setAmount] = React.useState(0);
+        const [hours, setHours] = React.useState(0);
+        const [flip, setFlip] = React.useState(false);
+        const onChange = (event) => {
+            setAmount(event.target.value);
+        };
+        const reset = () => {
+            setAmount(0);
+        };
+        const onFlip = () => {
+            reset();
+            setFlip((current) => !current);
+        };
         return (
         <div>
             <h1>Super Converter</h1>
-            <label htmlFor="Minutes">Minutes</label>
-            <input value={minutes} id="Minutes" placeholder="Minutes" type="number"/>
-            <label htmlFor="Hours">Hours</label>
-            <input value={hours} id="Hours" placeholder="Hours" type="number"/>
+            <div>
+                <label htmlFor="Minutes">Minutes</label>
+                <input value={flip ? amount * 60 : amount} id="Minutes" placeholder="Minutes" type="number" onChange={onChange} disabled={flip}/>
             </div>
+            <div>
+                <label htmlFor="Hours">Hours</label>
+                <input value={flip ? amount : Math.round(amount / 60)} id="Hours" placeholder="Hours" type="number" onChange={onChange} disabled={!flip}/>
+            </div>
+            <button onClick={reset}>Reset</button>
+            <button onClick={onFlip}>Flip</button>
+        </div>
         );
     };
     ReactDOM.render(<App />, root);
