@@ -13,37 +13,26 @@
 <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
-    const root = document.getElementById("root");
+    const Btn = ({text, changeValue}) => {
+        return (<button onClick={changeValue}>{text}</button>);
+    };
     const App = () => {
-        const [amount, setAmount] = React.useState(0);
-        const [hours, setHours] = React.useState(0);
-        const [flip, setFlip] = React.useState(false);
-        const onChange = (event) => {
-            setAmount(event.target.value);
-        };
-        const reset = () => {
-            setAmount(0);
-        };
-        const onFlip = () => {
-            reset();
-            setFlip((current) => !current);
+        const [value, setValue] = React.useState("Save Changes");
+        const changeValue = () => {
+            if(value === "Save Changes"){
+                setValue("Revert Changes");
+            } else {
+                setValue("Save Changes");
+            }
         };
         return (
         <div>
-            <h1>Super Converter</h1>
-            <div>
-                <label htmlFor="Minutes">Minutes</label>
-                <input value={flip ? amount * 60 : amount} id="Minutes" placeholder="Minutes" type="number" onChange={onChange} disabled={flip}/>
-            </div>
-            <div>
-                <label htmlFor="Hours">Hours</label>
-                <input value={flip ? amount : Math.round(amount / 60)} id="Hours" placeholder="Hours" type="number" onChange={onChange} disabled={!flip}/>
-            </div>
-            <button onClick={reset}>Reset</button>
-            <button onClick={onFlip}>Flip</button>
+            <Btn text={value} changeValue={changeValue}/>
+            <Btn text="Continue"/>
         </div>
         );
     };
+    const root = document.getElementById("root");
     ReactDOM.render(<App />, root);
 </script>
 </html>
