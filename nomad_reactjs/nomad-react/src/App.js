@@ -1,5 +1,5 @@
-import Button from "./Button";
-import styles from "./App.module.css";
+import Button from "./js/Button";
+import styles from "./css/App.module.css";
 
 function App() {
   return (
