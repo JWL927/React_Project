@@ -1,0 +1,22 @@
+.movie {
+    margin: 10px;
+    display: flex;
+    height: 300px;
+
+}
+.detail {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.img {
+    margin-right: 10px;
+}
+.h2 {
+    text-decoration: none;
+    color: black;
+}
+.h2:hover {
+    color: rgb(56, 255, 189);
+    transition: all 0.5s;
+}
