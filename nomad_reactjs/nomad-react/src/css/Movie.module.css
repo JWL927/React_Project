@@ -1,6 +1,6 @@
 .movie {
     display: flex;
-    width: 800px;
+    width: 750px;
     height: 320px;
     justify-content: center;
     background-color: whitesmoke;
@@ -16,6 +16,7 @@
 }
 .img {
     margin-right: 10px;
+    
 }
 .h2 {
     text-decoration: none;
