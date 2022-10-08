@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <div>
             {loading ? (
-                <h1>Loading...</h1>
+                <h1 className={styles.loading}>Loading...</h1>
             ) : (
                 <div className={styles.container}>
                     {movies.map((movie) => (

@@ -1,4 +1,3 @@
-import Button from "./js/Button";
 import styles from "./css/App.module.css";
 import {useState, useEffect} from "react";
 import Movie from "./js/Movie";
