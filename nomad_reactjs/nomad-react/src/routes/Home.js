@@ -15,7 +15,7 @@ const Home = () => {
         getMovies();
     }, []);
     return (
-        <div>
+        <div className={styles.top_div}>
             {loading ? (
                 <h1 className={styles.loading}>Loading...</h1>
             ) : (

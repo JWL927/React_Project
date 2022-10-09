@@ -1,12 +1,13 @@
 .movie {
     display: flex;
-    width: 750px;
+    flex-direction: column;
+    width: 210px;
     height: 320px;
-    justify-content: center;
     background-color: whitesmoke;
     padding: 10px;
     box-shadow: 5px 5px 5px gray;
-    margin: 5px;
+    margin: 20px;
+    border-radius: 5px;
 }
 .detail {
     display: flex;
@@ -15,8 +16,8 @@
     width: 500px;
 }
 .img {
-    margin-right: 10px;
-    
+    width: 210px;
+    height: 320px;
 }
 .h2 {
     text-decoration: none;
