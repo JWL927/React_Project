@@ -5,8 +5,14 @@ import styles from "../css/Movie.module.css"
 
 const Movie = ({id, coverImg, title, summary, genres}) => {
     const [show, setShow] = useState(false);
+    const onMouseOver = () => {
+        setShow(true);
+    };
+    const onMouseLeave = () => {
+        setShow(false);
+    };
     return (
-        <div className={styles.movie}>
+        <div className={styles.movie} onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}>
             <img src={coverImg} alt={title} className={styles.img} />
             <div className={styles.detail}>
                 {show ? (
