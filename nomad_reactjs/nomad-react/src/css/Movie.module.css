@@ -1,8 +1,8 @@
 .movie {
     display: flex;
     flex-direction: column;
-    width: 310px;
-    height: 450px;
+    width: 210px;
+    height: 300px;
     background-color: whitesmoke;
     padding: 10px;
     box-shadow: 5px 5px 5px gray;
@@ -18,18 +18,18 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 310px;
+    width: 210px;
     position: absolute;
     top: 30%;
     padding: 5px;
     text-align: center;
 }
 .detail h2 {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 .img {
-    width: 310px;
-    height: 450px;
+    width: 210px;
+    height: 300px;
 }
 .h2 {
     text-decoration: none;

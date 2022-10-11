@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import Movie from "../js/Movie";
+import { useEffect, useState } from "react"
+import Movie from "../js/Movie"
 import styles from "../css/Home.module.css"
+import image from "../img/logo.png"
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
@@ -15,24 +16,30 @@ const Home = () => {
         getMovies();
     }, []);
     return (
-        <div className={styles.top_div}>
-            {loading ? (
-                <h1 className={styles.loading}>Loading...</h1>
-            ) : (
-                <div className={styles.container}>
-                    {movies.map((movie) => (
-                        <Movie 
-                            key={movie.id}
-                            id={movie.id}
-                            coverImg={movie.medium_cover_image} 
-                            title={movie.title} 
-                            summary={movie.summary}
-                            genres={movie.genres}
-                        />
-                    ))}
-                </div>
-            )}
-        </div>
+        <>
+            <nav className={styles.navigation}>
+                <img src={image} alt="logo" width="134px"/>
+            </nav>
+            <div className={styles.top_div}>
+                {loading ? (
+                    <h1 className={styles.loading}>Loading...</h1>
+                ) : (
+                    <div className={styles.container}>
+                        {movies.map((movie) => (
+                            <Movie 
+                                key={movie.id}
+                                id={movie.id}
+                                coverImg={movie.medium_cover_image} 
+                                title={movie.title} 
+                                summary={movie.summary}
+                                genres={movie.genres}
+                            />
+                        ))}
+                    </div>
+                )}
+            </div>
+        </>
+        
     );
 };
 
