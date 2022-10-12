@@ -2,6 +2,18 @@
     width: 100%;
     height: 200px;
     background-color: white;
+    display: flex;
+    align-items: center;
+}
+.menubar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+.menubar li {
+    margin: 40px;
+    font-weight: bold;
 }
 .top_div {
     width: 100%;

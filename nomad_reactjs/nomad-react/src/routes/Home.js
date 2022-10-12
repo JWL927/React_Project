@@ -19,7 +19,7 @@ const Home = () => {
         <>
             <nav className={styles.navigation}>
                 <img src={image} alt="logo" width="134px"/>
-                <ul>
+                <ul className={styles.menubar}>
                     <li>Home</li>
                     <li>My Movie</li>
                     <li>About</li>
