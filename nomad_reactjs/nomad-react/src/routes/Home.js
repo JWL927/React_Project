@@ -19,6 +19,11 @@ const Home = () => {
         <>
             <nav className={styles.navigation}>
                 <img src={image} alt="logo" width="134px"/>
+                <ul>
+                    <li>Home</li>
+                    <li>My Movie</li>
+                    <li>About</li>
+                </ul>
             </nav>
             <div className={styles.top_div}>
                 {loading ? (
