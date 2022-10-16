@@ -8,7 +8,7 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right top, #fffe00, #ffa100, #ff0053, #fd00a6, #2412eb);
+    background: linear-gradient(#D61C4E, #F77E21, #FAC213, #FEF9A7);
     background-repeat: no-repeat;
     background-attachment: fixed;
 }

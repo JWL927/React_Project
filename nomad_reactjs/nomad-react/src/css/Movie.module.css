@@ -2,8 +2,8 @@
 .movie {
     display: flex;
     flex-direction: column;
-    width: 210px;
-    height: 300px;
+    width: 160px;
+    height: 250px;
     background-color: whitesmoke;
     padding: 10px;
     box-shadow: 5px 5px 5px gray;
@@ -19,21 +19,25 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 210px;
+    width: 160px;
     position: absolute;
     top: 30%;
     padding: 5px;
     text-align: center;
 }
 .img {
-    width: 210px;
-    height: 300px;
+    width: 160px;
+    height: 250px;
 }
-.h2 {
+.detail .h2 {
     text-decoration: none;
     color: black;
+    font-size: 15px;
 }
 .h2:hover {
     text-shadow: 1px 1px 2px black;
     transition: all 0.5s;
+}
+.detail p {
+    font-size: 10px;
 }
