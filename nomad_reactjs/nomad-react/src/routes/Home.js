@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Movie from "../js/Movie"
 import styles from "../css/Home.module.css"
 import image from "../img/logo.png"
+import ColoredLine from "../js/HrLine";
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
@@ -18,7 +19,10 @@ const Home = () => {
     return (
         <>
             <nav className={styles.navigation}>
-                <img src={image} alt="logo" width="134px"/>
+                <div>
+                    <img src={image} alt="logo" width="134px"/>
+                </div>
+                <ColoredLine color="black" />
                 <ul className={styles.menubar}>
                     <li>Home</li>
                     <li>My Movie</li>
