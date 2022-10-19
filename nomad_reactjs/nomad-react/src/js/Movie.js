@@ -13,21 +13,23 @@ const Movie = ({id, coverImg, title, summary, genres}) => {
     };
     return (
         <div className={styles.movie} onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}>
-            <img src={coverImg} alt={title} className={styles.img} />
-            <div className={styles.detail}>
-                {show ? (
-                    <>
-                        <h2>
-                            <Link to={`/movie/${id}`}  className={styles.h2}>{title}</Link>
-                        </h2>
-                        <p>
-                            {summary.length > 150 ? `${summary.slice(0, 150)}...` : summary}
-                        </p>
-                    </>
-                ) : (
-                    null
-                )}
-            </div>
+            <Link to={`/movie/${id}`}>
+                <img src={coverImg} alt={title} className={styles.img} />
+                <div className={styles.detail}>
+                    {show ? (
+                        <>
+                            <h2 className={styles.h2}>
+                                {title}
+                            </h2>
+                            <p>
+                                {summary.length > 150 ? `${summary.slice(0, 150)}...` : summary}
+                            </p>
+                        </>
+                    ) : (
+                        null
+                    )}
+                </div>
+            </Link>
         </div>
     );
 };

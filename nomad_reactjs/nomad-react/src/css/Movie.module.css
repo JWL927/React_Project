@@ -11,19 +11,20 @@
     border-radius: 5px;
     position: relative;
 }
-.movie:hover {
-    opacity: 0;
-    transition: all 0.5s;
-}
 .detail {
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 160px;
+    height: 250px;
     position: absolute;
-    top: 30%;
+    top: 0;
     padding: 5px;
     text-align: center;
+}
+.detail:hover > .img {
+    opacity: 0;
+    transition: all 0.5s;
 }
 .img {
     width: 160px;
