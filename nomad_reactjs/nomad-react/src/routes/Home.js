@@ -3,6 +3,7 @@ import Movie from "../js/Movie"
 import styles from "../css/Home.module.css"
 import image from "../img/logo.png"
 import ColoredLine from "../js/HrLine";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
