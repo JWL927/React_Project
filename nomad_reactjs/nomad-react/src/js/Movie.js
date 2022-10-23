@@ -17,14 +17,9 @@ const Movie = ({id, coverImg, title, summary, genres}) => {
                 <img src={coverImg} alt={title} className={styles.img} />
                 <div className={styles.detail}>
                     {show ? (
-                        <>
-                            <h2 className={styles.h2}>
-                                {title}
-                            </h2>
-                            <p>
-                                {summary.length > 150 ? `${summary.slice(0, 150)}...` : summary}
-                            </p>
-                        </>
+                        <h2 className={styles.h2}>
+                            {title}
+                        </h2>
                     ) : (
                         null
                     )}
