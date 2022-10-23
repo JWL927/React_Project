@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    box-shadow: 5px 5px 5px gray;
+    box-shadow: 0 5px 5px gray;
 }
 .menubar {
     width: 30%;
