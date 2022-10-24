@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
 import Movie from "../js/Movie"
 import styles from "../css/Home.module.css"
-import image from "../img/logo.png"
-import ColoredLine from "../js/HrLine";
-import { Link } from "react-router-dom";
+import Navigation from "../js/Nav";
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
@@ -19,17 +17,7 @@ const Home = () => {
     }, []);
     return (
         <>
-            <nav className={styles.navigation}>
-                <div>
-                    <img src={image} alt="logo" width="134px"/>
-                </div>
-                <ColoredLine color="black" />
-                <ul className={styles.menubar}>
-                    <li>Home</li>
-                    <li>My Movie</li>
-                    <li>About</li>
-                </ul>
-            </nav>
+            <Navigation />
             <div className={styles.top_div}>
                 {loading ? (
                     <h1 className={styles.loading}>Loading...</h1>
